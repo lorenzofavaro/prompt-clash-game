@@ -5,6 +5,8 @@ The application allows up to 5 players to compete in image generation rounds usi
 
 In each round, players are given a specific theme and time limit. They must craft creative text prompts that generate images related to the theme. These AI-generated images are then evaluated by an admin, which selects the most creative and thematically appropriate submission as the winner.
 
+### Demo
+https://github.com/user-attachments/assets/bb0fdb37-63c0-4298-af06-1512433f46aa
 
 ## Table of Contents
 - [Game Mechanics](#game-mechanics)
