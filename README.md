@@ -10,15 +10,15 @@ https://github.com/user-attachments/assets/bb0fdb37-63c0-4298-af06-1512433f46aa
 
 ## Table of Contents
 - [Game Mechanics](#game-mechanics)
-- [Architecture](#architecture)
-  - [Components](#architecture-components)
+- [Architecture](#architecture-diagram)
   - [Diagram](#architecture-diagram)
+  - [Components](#architecture-components)
 - [Prerequisites](#prerequisites)
   - [Required Services](#required-services-and-subscriptions)
   - [Software Requirements](#software-requirements)
-- [Deployment Options](#deployment-options)
-  - [Local Development](#run---locally)
-  - [Docker Compose](#deploy---docker-compose)
+- [Deployment Options](#local-development)
+  - [Local Development](#local-development)
+  - [Docker Compose](#docker-compose)
 - [Alternative Configurations](#alternative-cloud-providers-and-configurations)
 
 ## Game Mechanics
