@@ -1,0 +1,59 @@
+# Build directories
+build/
+dist/
+dist-ssr/
+
+# Python specific
+*.egg-info/
+__pycache__/
+*.db
+
+# Environment files
+.env
+.env-*
+*.files
+
+# Virtual environments
+venv/
+.venv/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js directories and files
+node_modules/
+dist/
+
+# Miscellaneous
+**/.chainlit/translations/
+chainlit.md
+.ipynb_checkpoints/
+
+# Static files
+*.local
+
+# TypeScript and JS specific
+*.tsbuildinfo
+
+# Aider-specific files
+.aider*
+
+# Kubernetes
+.kube

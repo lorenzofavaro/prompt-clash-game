@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "round-manager-service"
+version = "0.1.0"
+description = "Round manager service for Theme Prompt Clash"
+authors = ["Lorenzo Favaro"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "==3.9.2"
+fastapi = "==0.115.7"
+uvicorn = {extras = ["standard"], version = "^0.34.0"}
+sqlalchemy = "^2.0.38"
+aiomysql = "^0.2.0"
+python-dotenv = "^1.0.1"
+tenacity = "^9.0.0"
+cryptography = "^42.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

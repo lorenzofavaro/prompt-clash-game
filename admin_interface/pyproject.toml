@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "admin-interface"
+version = "0.1.0"
+description = "Admin interface for Theme Prompt Clash"
+authors = ["Lorenzo Favaro"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "==3.9.2"
+streamlit = "^1.42.0"
+streamlit-authenticator = "^0.4.1"
+requests = "^2.32.3"
+tenacity = "^9.0.0"
+httpx = "^0.28.1"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

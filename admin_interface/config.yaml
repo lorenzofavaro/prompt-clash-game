@@ -1,0 +1,13 @@
+cookie:
+  expiry_days: 30
+  name: auth_cookie
+credentials:
+  usernames:
+    admin:
+      email: admin@mail.com
+      failed_login_attempts: 0
+      first_name: Admin
+      last_name: Admin
+      logged_in: False
+      roles:
+      - admin

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "admin-service"
+version = "0.1.0"
+description = "Admin service for Theme Prompt Clash"
+authors = ["Lorenzo Favaro"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "==3.9.2"
+fastapi = "==0.115.7"
+uvicorn = "==0.34.0"
+requests = "^2.32.3"
+tenacity = "^9.0.0"
+httpx = "^0.28.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

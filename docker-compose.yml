@@ -1,0 +1,96 @@
+services:
+  database_service:
+    image: mysql:latest
+    container_name: mysql-instance
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=chainlit_db
+      - MYSQL_USER=app_user
+      - MYSQL_PASSWORD=app_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  admin_interface:
+    build:
+      context: ./admin_interface
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - admin_service
+    env_file:
+      - ./admin_interface/.env-docker
+    networks:
+      - app_network
+
+  admin_service:
+    build:
+      context: ./admin_service
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    depends_on:
+      - chat_service
+      - round_manager_service
+    env_file:
+      - ./admin_service/.env-docker
+    networks:
+      - app_network
+
+  chat_service:
+    build:
+      context: ./chat_service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      database_service:
+        condition: service_healthy
+    env_file:
+      - ./chat_service/.env-docker
+    networks:
+      - app_network
+
+  round_manager_service:
+    build:
+      context: ./round_manager_service
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    depends_on:
+      database_service:
+        condition: service_healthy
+    env_file:
+      - ./round_manager_service/.env-docker
+    networks:
+      - app_network
+
+  user_interface:
+    build:
+      context: ./user_interface
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - chat_service
+      - round_manager_service
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
