@@ -22,7 +22,7 @@ Before you begin, ensure you have installed:
 - pnpm
 - Docker and Docker Compose (for containerized deployment)
 
-For detailed installation instructions, refer to the [README.md](./README.md).
+For detailed installation instructions, refer to the [INSTALLATION.md](./INSTALLATION.md).
 
 ## Development Workflow
 
@@ -33,12 +33,27 @@ For detailed installation instructions, refer to the [README.md](./README.md).
 5. Update documentation as needed
 6. Ensure all tests pass before submitting PR
 
-## Looking for Ways to Contribute?
+## Future Improvements
 
-Check out our open improvement points in the [README.md](./README.md#future-improvements) for areas where we need help. These include:
+This is currently a demo version with several important features still in development:
 
-- Performance optimization for real-time updates
-- Enhanced accessibility features
-- Additional test coverage
-- Documentation improvements
-- UI/UX enhancements
+### Image Selection
+- Currently, only the last generated image per user is considered for the round
+- Need to implement user ability to review and select their preferred image from all generations during the round
+- Plan to add a gallery view for users to compare their generated images before final submission
+
+### Winner Selection Process
+- Current winner selection is manual and designed for live events
+- Need to implement:
+  - Frontend UI for automated voting/selection
+  - Points system and user rankings
+  - Potential AI-powered judging using LLMs to evaluate creativity and theme adherence
+
+### Chat Management
+- Chat sessions need to be:
+  - Automatically created and linked to specific game rounds
+  - Cleared between rounds
+  - Managed by the system rather than user-initiated
+- Implement proper round-chat synchronization and lifecycle management
+
+We are open to receive contributions!
