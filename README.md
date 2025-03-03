@@ -8,19 +8,6 @@ In each round, players are given a specific theme and time limit. They must craf
 ### Demo
 https://github.com/user-attachments/assets/bb0fdb37-63c0-4298-af06-1512433f46aa
 
-## Table of Contents
-- [Game Mechanics](#game-mechanics)
-- [Architecture](#architecture-diagram)
-  - [Diagram](#architecture-diagram)
-  - [Components](#architecture-components)
-- [Prerequisites](#prerequisites)
-  - [Required Services](#required-services-and-subscriptions)
-  - [Software Requirements](#software-requirements)
-- [Deployment Options](#local-development)
-  - [Local Development](#local-development)
-  - [Docker Compose](#docker-compose)
-- [Alternative Configurations](#alternative-cloud-providers-and-configurations)
-
 ## Game Mechanics
 
 - Participants compete in image generation rounds using OpenAI's DALL-E
@@ -28,6 +15,31 @@ https://github.com/user-attachments/assets/bb0fdb37-63c0-4298-af06-1512433f46aa
 - Players receive a specific theme and time limit at the start of each round
 - Participants write creative prompts to generate images related to the assigned theme ([prompt examples](https://generrated.com/?model=dalle2))
 - An admin evaluates and selects the most creative image at the end of each round
+
+## Future Improvements
+
+This is currently a demo version with several important features still in development:
+
+### Image Selection
+- Currently, only the last generated image per user is considered for the round
+- Need to implement user ability to review and select their preferred image from all generations during the round
+- Plan to add a gallery view for users to compare their generated images before final submission
+
+### Winner Selection Process
+- Current winner selection is manual and designed for live events
+- Need to implement:
+  - Frontend UI for automated voting/selection
+  - Points system and user rankings
+  - Potential AI-powered judging using LLMs to evaluate creativity and theme adherence
+
+### Chat Management
+- Chat sessions need to be:
+  - Automatically created and linked to specific game rounds
+  - Cleared between rounds
+  - Managed by the system rather than user-initiated
+- Implement proper round-chat synchronization and lifecycle management
+
+We are open to receive contributions!
 
 ## Architecture Diagram
 ![Architecture](docs/images/current_architecture.png)
