@@ -1,5 +1,5 @@
-# Theme Prompt Clash
-Theme Prompt Clash is an innovative interactive game that leverages generative AI to create a competitive and creative experience. 
+# Prompt Clash Game
+Prompt Clash Game is an innovative interactive game that leverages generative AI to create a competitive and creative experience. 
 
 The application allows up to 5 players to compete in image generation rounds using OpenAI's DALL-E model.
 
