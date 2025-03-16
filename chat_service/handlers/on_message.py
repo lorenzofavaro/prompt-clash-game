@@ -4,7 +4,6 @@ from utils.logger import logger
 
 import chainlit as cl
 from config import Config
-from langchain.schema.runnable import Runnable
 
 
 @cl.step(type='tool', name='Message Length Check', show_input=False)
@@ -25,8 +24,17 @@ async def execute(message: cl.Message, user_session, config: Config):
         input_args = {'user_history': user_history_str, 'image_desc': question}
 
         prompt_time = time.time()
-        async for generation_prompt_token, image_url in chain.ainvoke(input_args):
-            if image_url:
+        async for response in chain.ainvoke(input_args):
+            generation_prompt_token = response.get('generation_prompt_token', None)
+            image_url = response.get('image_url', None)
+            exception = response.get('exception', None)
+
+            if exception:
+                msg.content = exception
+                await msg.update()
+                logger.error(f'Image generation failed: {exception}')
+                break
+            elif image_url:
                 image_gen_time = time.time() - prompt_time
                 logger.info(f'Image generation took {image_gen_time:.2f}s for user {user_id}')
                 image = cl.Image(name='Generated image', url=image_url)
