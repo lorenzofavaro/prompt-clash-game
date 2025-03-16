@@ -51,4 +51,4 @@ The current implementation uses MySQL with a custom data layer, but Chainlit nat
 2. Update the database connection string in your environment variables
 3. You can use Chainlit's built-in PostgreSQL data layer instead of the custom MySQL data layer
 
-This would simplify the implementation as you wouldn't need to create a custom data layer like the one in `chat_service/data/mysql_data_layer.py`.
+This would simplify the implementation as you wouldn't need to create a custom data layer like the one in [mysql_data_layer.py](chat_service/data/mysql_data_layer.py).
