@@ -1,3 +1,9 @@
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+![Stars](https://img.shields.io/github/stars/lorenzofavaro/prompt-clash-game?style=social)
+![Forks](https://img.shields.io/github/forks/lorenzofavaro/prompt-clash-game?style=social)
+
 # Prompt Clash Game
 Prompt Clash Game is an innovative interactive game that leverages generative AI to create a competitive and creative experience. 
 
